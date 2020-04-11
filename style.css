@@ -1,0 +1,61 @@
+/* 
+- Mobile: 375px
+- Desktop: 1440px
+
+- Very Pale Cyan: hsl(193, 100%, 96%)
+- Very Dark Cyan: hsl(192, 100%, 9%)
+- Grayish Blue: hsl(208, 11%, 55%)
+
+## Icons
+
+For the social icons, you can use a font icon library. Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com/)
+- [IcoMoon](https://icomoon.io/)
+- [Ionicons](https://ionicons.com/)
+
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: hsl(322, 100%, 66%);
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;/*  400, 700  */
+}
+
+img {
+    max-width: 100%;
+}
+button {
+    border-radius: 50px;
+    font-weight: 700;
+}
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.btn-primary {
+    background-color: var(--pink);
+    color: #fff;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+.btn-secondary {
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+}
+.feature {
+    padding: 20px;
+
+}
