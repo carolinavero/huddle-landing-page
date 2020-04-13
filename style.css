@@ -2,10 +2,6 @@
 - Mobile: 375px
 - Desktop: 1440px
 
-- Very Pale Cyan: hsl(193, 100%, 96%)
-- Very Dark Cyan: hsl(192, 100%, 9%)
-- Grayish Blue: hsl(208, 11%, 55%)
-
 ## Icons
 
 For the social icons, you can use a font icon library. Some suggestions can be found below:
@@ -21,17 +17,43 @@ For the social icons, you can use a font icon library. Some suggestions can be f
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
 :root {
     --pink: hsl(322, 100%, 66%);
+    --veryPaleCyan: hsl(193, 100%, 96%);
+    --veryDarkCyan: hsl(192, 100%, 9%);
+    --grayishBlue: hsl(208, 11%, 55%);
+    --box-shadow: 1px 1px 20px #ccc;
 }
 
 body {
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;/*  400, 700  */
 }
-
+.container {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col-12 {
+    width: 100%;
+}
+.col-6 {
+    width: 49%;
+    display: inline-block;
+}
 img {
     max-width: 100%;
 }
@@ -39,10 +61,15 @@ button {
     border-radius: 50px;
     font-weight: 700;
 }
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
+
 .btn-primary {
     background-color: var(--pink);
     color: #fff;
@@ -51,11 +78,219 @@ h1, h2, h3 {
 }
 .btn-secondary {
     background-color: #fff;
-    color: #333;
+    color: #000;
     font-size: 1rem;
     padding: .5rem 1rem;
+    float: right;
+    border: none;
+    box-shadow: var(--box-shadow);
+}
+
+.main {
+    background-image: url(images/bg-hero-mobile.svg);
+    background-color: var(--veryPaleCyan);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.main p {
+    margin: 2rem 0;
+}
+.main-block {
+    text-align: center;
+}
+.main-block .btn-primary {
+   margin-bottom: 2rem;
+}
+header {
+    margin-bottom: 3rem;
+}
+.features-block {
+    text-align: center;
+    padding-top: 3rem;
+}
+.features-block h2 {
+    padding: 2rem 0 1rem 0;
+    font-size: 1.3rem;
+}
+.features-block p {
+    color: var(--grayishBlue);
+    font-size: 1rem;
 }
 .feature {
-    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin: 3rem 0;
+    background-color: #fff;
+}
+.cta {
+    text-align: center;
+    position: relative;
+}
+.cta .bg-cta {
+    height: 40%;
+    width: 100%;
+    background-color: #00252f;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.cta h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.cta .feature {
+    margin: 0;
+    padding: 2rem 1.2rem;
+    box-shadow: none;
+    background-color: #fff;
 
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+.cta .feature:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 55%;
+    top: 0;
+    left:0;
+    box-shadow: 0px 0px 20px 5px #ccc;
+    z-index: -1;
+}
+
+.cta .btn-primary {
+    font-size: .8rem;
+}
+footer {
+    background-color: #00252f;
+    color: #fff;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+footer img {
+    color: #fff;
+}
+
+footer ul li {
+    list-style: none;
+    padding: .5rem 0;
+}
+.item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem 0;
+
+}
+.info .item-icon{
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.info .item-info {
+    width: 80%;
+    display: inline-block;
+}
+footer .menu {
+    padding: 2rem  0;
+    
+}
+footer .copyright {
+    text-align: center;
+    font-size: .8rem;
+}
+.social-network {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 1rem 0;
+}
+.social-network a {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #fff;
+    line-height: 40px;
+}
+.social-network ul li {
+    display: inline-block;
+    padding: .5rem;
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+
+
+@media(min-width: 600px) {
+    .container {
+        width: 100%;
+        max-width: 1200px;
+    }
+    .main {
+        background-image: url(images/bg-hero-desktop.svg);
+    }
+    .main-block {
+        text-align: left;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .features-block {
+        text-align: left;
+    }
+    .features-block h2 {
+        padding-top: 0;
+    }
+    .feature {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 2rem 2rem 7rem;
+    }
+    .feature img {
+        width: 40%;
+        padding: 1rem;
+    }
+    .reverse {
+        flex-direction: row-reverse;
+    }
+    .cta .feature {
+        max-width: 50%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+    .info {
+        width: 30%;
+        display: inline-block;
+    }
+    .menu {
+        width: 49%;
+        display: inline-block;
+    }
+    .social-network {
+        width: 20%;
+        display: inline-block;
+    }
+    footer {
+        padding-top: 2rem;
+    }
+    .copyright {
+        text-align: right;
+    }
 }
